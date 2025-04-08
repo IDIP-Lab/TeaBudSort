@@ -1,0 +1,13 @@
+# path
+path: ../../datasets/tea # dataset root dir
+train: train/images # train images
+val: val/images # val images
+test: test/images # test images
+
+# classes
+names:
+  0: Bud
+  1: Bud_with_one_leaf
+  2: Bud_with_two_leaf
+  3: leaf
+  4: others
