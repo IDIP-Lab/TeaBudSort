@@ -1,4 +1,4 @@
-# YOLOv12 for Tea Detection
+# YOLOv12 for Tea Bud Detection
 
 ## Datasets
 **We constructed the tea dataset with a total of ? images, of which the training set? images, test set? images, validation set? images. The dataset contains five classes: `0: Bud`, `1: Bud_with_one_leaf`, `2: Bud_with_two_leaf`, `3: leaf`, and `4: others` (can't classify the target from 0 to 3), and the corresponding examples are shown in Figure 1. Figure 2 gives the statistics of the number of different classes in the dataset.**
@@ -13,7 +13,45 @@
   Figure 2. Statistics on the number of different classes
 </p>
 
-**Please download [tea dataset](https://huggingface.co/datasets/IDIP-Lab/TeaBudSort_Dataset/tree/main) first and place dataset to the folder `../datasets/`.**
+**We give [TeaBud Datasets](https://huggingface.co/datasets/IDIP-Lab/TeaBudSort_Dataset/tree/main) in coco format and ultralytics format respectively. The files are arranged as follows:**
+* **ultralytics dataset**
+```
+|—train
+|    |—images
+|    |    |—Image_xxx.jpg
+|    |—labels
+|    |    |—Image_xxx.txt
+|
+|—test
+|    |—images
+|    |    |—Image_yyy.jpg
+|    |—labels
+|    |    |—Image_yyy.txt
+|
+|—val
+|    |—images
+|    |    |—Image_zzz.jpg
+|    |—labels
+|    |    |—Image_zzz.txt
+|
+```
+* **coco dataset**
+```
+|—train
+|    |—Image_xxx.jpg
+|
+|—test
+|    |—Image_yyy.jpg
+|
+|—val
+|    |—Image_zzz.jpg
+|
+|—annotations
+|    |—train.json
+|    |—test.json
+|    |—val.json
+```
+**Current models only support the ultralytics dataset, the coco version comes later. To run our model, please download ultralytics dataset first and place dataset to the folder `../datasets/`.**
 
 ## Main Results
 **We did three comparison experiments using `1:original model + original image`, `2:using ATFL loss + original image`, and `3:original model + image with the surrounding black edges cut`. The PR-curve of three experiments are as follows:**
